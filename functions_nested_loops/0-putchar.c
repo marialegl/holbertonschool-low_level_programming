@@ -1,4 +1,4 @@
-#include "main.c"
+#include "main.h"
 
 /**
  * main - c program: print  a line of text
