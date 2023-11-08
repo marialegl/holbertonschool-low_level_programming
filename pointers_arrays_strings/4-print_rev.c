@@ -1,22 +1,22 @@
 #include "main.h"
+#include <stdio.h>
 #include <string.h>
+#define TAM 70
 
 /**
- * _print_rev - prints a string in reverse.
+ * print_rev - prints a string in reverse.
+ * description: function that prints a string, in reverse
  * @s: pointer to the string.
  */
 void print_rev(char *s)
 {
-	int i, len;
-	char temp;
+	int len = strlen(s);
+	
+	int i;
 
-	len = strlen(s);
-
-	for (i = 0; i < len / 2; i++)
+	for (i = len - 1; i >= 0; i--)
 	{
-		temp = s[i];
-		s[i] = s[len - i - 1];
-			s[len - i - 1] = temp;
+		_putchar(s[i]);
 	}
 	_putchar('\n');
 }
