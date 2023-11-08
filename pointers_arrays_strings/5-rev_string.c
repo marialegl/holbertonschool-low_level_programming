@@ -3,7 +3,8 @@
 #include <stdio.h>
 
 /**
- * rev_string - prints a string in reverse.
+ * rev_string - prints a string, makes a line break 
+ * and prints the same string in reverse on the same line.
  * @s: pointer to the string.
  */
 void rev_string(char *s)
@@ -11,13 +12,11 @@ void rev_string(char *s)
 	int len = strlen(s);
 	int i;
 
-	while (*s != '\0')
-	{
-		s++;
-	}
+	printf("%s\n", s);
 
 	for (i = len - 1; i >= 0; i--)
 	{
-		s--;
+		putchar(s[i]);
 	}
+	putchar('\n');
 }
