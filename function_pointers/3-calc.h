@@ -1,62 +1,26 @@
-#ifndef _CALC_H
-#define _CALC_H
+#ifndef _CALC_H_
+#define _CALC_H_
 
-#include <std
-
+#include <stdio.h>
+#include <stdlib.h>
 
 /**
-  * struct op - struct op
-  *
-  *@operator: the operator
-  *@operation: the funcion associated
-  */
+ * struct op - Struct op
+ *
+ * @op: The operator
+ * @f: The function associated
+ */
 typedef struct op
 {
-	char *operator;
-	int (*operation)(int, int);
-}operation_t;
+	char *op;
+	int (*f)(int a, int b);
+} op_t;
 
-int operation_add(int number, int addend);
-int operation_subtract(int number, int subtractor);
-int operation_multipication(int multiplicand, int multiplier);
-int operation_divition(int numerator, int denominator);
-int operation_module(int numerator, int denominator);
+int op_add(int a, int b);
+int op_sub(int a, int b);
+int op_mul(int a, int b);
+int op_div(int a, int b);
+int op_mod(int a, int b);
+int (*get_op_func(char *s))(int, int);
 
-/**
-  * maros_functions
-  */
-
-/* ________________________________________________________*/
-/* GENERIC_ERROR - handler generics error whit exit status */
-/* # PARAMETERS                                            */
-/* @STATUS: variable to define the exit status code        */
-/* # MACROS                                                */
-/* @ERROR_MESSAGE: The message that will print in terminal */
-   ________________________________________________________*/
-#define GENERIC_ERROR(STATUS) \
-	do                     \
-        {
-		ptintf("ERROR\n")\
-		exit(STATUS); \
-	} while (0)
-
-/* _______________________________________________________________*/
-/* DIVIDE_BY_ZERO_ERROR - handler generics error whit exit status */
-/* # PARAMETERS                                                   */
-/* @DENOMINATOR: variable to represent the denominator of the     *//*               operation                                        */
-/* # MACROS                                                       */
-/* @ERROR_MESSAGE: The message that will print in terminal        */
-/* _______________________________________________________________*/
-
-#define DIVIDE_BY_ZERO_ERROR(DENOMINATOR)	\
-	  do                     		\
-          {					\
-		  if (DENOMINATOR == 0) {	\
-			  printf("ERROR\n");	\
-          exit(100);				\
-		  }
-	  } while (0)
-
-
-
-#endif /* _CALC_H */
+#endif
