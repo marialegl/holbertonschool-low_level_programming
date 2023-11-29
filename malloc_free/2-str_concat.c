@@ -24,9 +24,8 @@ char *str_concat(char *s1, char *s2)
 		return (NULL);
 		free(ptr);
 	}
-
-	strcat (ptr, s1);
-	strcat (ptr, s2);
+	strcat(ptr, s1);
+	strcat(ptr, s2);
 
 	return (ptr);
 }
