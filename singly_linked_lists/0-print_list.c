@@ -1,12 +1,11 @@
 #include "lists.h"
 #include <stdio.h>
 
-/*
-   * print_list - prints all the elements of a list_t list
-   * @list_t: data structure
-   * @*h: constant pointer to a structure
-   * Return: memory sizes
-   */
+/**
+ * print_list - prints all the elements of a structure.
+ * @h: constant pointer to a structure.
+ * Return: memory sizes.
+ */
 size_t print_list(const list_t *h)
 {
 	size_t node_count;
